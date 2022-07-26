@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    /*PRIMARY*/
+    --darkcyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    /*NEUTRAL*/
+    --vdarkblue: hsl(212, 21%, 14%);
+    --dgrayishblue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --text: 'Montserrat', sans-serif;
+    --highlighted-text: 'Fraunces', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cream);
+    display: flex;
+    max-width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 14px;
+}
+
+.preview-card-component {
+    display: flex;
+    max-width: 600px;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 15px;
+    max-height: 450px;
+}
+
+.preview-card-component #product-image img {
+    max-width: 300px;
+}
+
+.preview-card-component .product-details {
+    padding: 32px;
+}
+
+#text-type {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-family: var(--text);
+    color: var(--dgrayishblue);
+    margin-bottom: 20px;
+}
+
+#text-title {
+    font-family: 'Fraunces', serif;
+    color: var(--vdarkblue);
+    font-size: 32px;
+    margin-bottom: 25px;
+    line-height: 1em;
+}
+
+#text-description {
+    font-family: var(--text);
+    color: var(--dgrayishblue);
+    margin-bottom: 25px;
+    line-height: 1.5em;
+}
+
+#text-price {
+    font-family: var(--highlighted-text);
+    color: var(--darkcyan);
+    font-size: 32px;
+}
+
+#text-preprice {
+    text-decoration: line-through;
+    color: var(--dgrayishblue);
+    font-family: var(--text);
+}
+
+#price-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.preview-card-component .product-details #product-purchasebutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 48px;
+    width: 100%;
+    border-radius: 8px;
+    background: var(--darkcyan);
+    color: var(--white);
+    border: none;
+    font-family: var(--text);
+    font-weight: 700;
+    user-select: none;
+}
+
+.preview-card-component .product-details #product-purchasebutton:hover {
+    background: hsl(156deg 42% 18%);
+    cursor: pointer;
+}
+
+.preview-card-component .product-details #product-purchasebutton:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 686px) {
+    .preview-card-component {
+        flex-direction: column;
+        max-width: 350px;
+        max-height: none;
+    }
+
+    .preview-card-component #product-image img {
+        max-width: 100%;
+    }
+}
